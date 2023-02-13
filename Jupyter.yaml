@@ -4,13 +4,15 @@ metadata:
   name: jupyter
   namespace: argocd
 spec:
+  project: default
+
   source:
     path: jupyter
+    targetRevision: HEAD
     repoURL: https://github.com/mowe49/ArgocdTest.git
   destination:
     namespace: jupyter
     server: https://kubernetes.default.svc
-  project: default
   syncPolicy:
     syncOptions:
       - CreateNamespace=true

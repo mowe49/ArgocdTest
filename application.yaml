@@ -7,13 +7,12 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/mowe49/ArgocdTest.git
-    targetRevision: HEAD
     path: dev
+    targetRevision: HEAD
+    repoURL: https://github.com/mowe49/ArgocdTest.git
   destination:
-    server: https://kubernetes.default.svc
     namespace: argotest
-
+    server: https://kubernetes.default.svc
   syncPolicy:
     syncOptions:
       - CreateNamespace=true

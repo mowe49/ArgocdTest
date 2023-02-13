@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+helmCharts:
+  - name: jupyterhub
+    repo: https://jupyterhub.github.io/helm-chart/
+    version: 2.0.0
+    releaseName: jupyterhub
+    namespace: jupyter
+    includeCRDs: true
+    valuesInline:
+      singleuser:
+        image:
+          name: jupyter/all-spark-notebook
+          tag: spark-3.3.1
+        # https://discourse.jupyter.org/t/pyspark-library-is-missing-from-jupyter-pyspark-notebook-when-running-with-jupyterhub-zero-to-jupyterhub-k8s/8450/3
+        cmd: null

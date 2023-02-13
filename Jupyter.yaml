@@ -10,7 +10,7 @@ spec:
   destination:
     namespace: jupyter
     server: https://kubernetes.default.svc
-  project: core
+  project: default
   syncPolicy:
     syncOptions:
       - CreateNamespace=true

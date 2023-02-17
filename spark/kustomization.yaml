@@ -1,9 +1,0 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-
-helmCharts:
-  - name: spark-operator
-    repo: https://googlecloudplatform.github.io/spark-on-k8s-operator
-    releaseName: spark-operator-release
-    namespace: jupyter
-    includeCRDs: true
